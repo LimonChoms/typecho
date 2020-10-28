@@ -10,6 +10,7 @@ RUN apk add --no-cache tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" >  /etc/timezone \
     && rm -rf /var/cache/apk/* \
-    && sed -i 's/405:100/999:999/g' /etc/passwd && sed -i 's/82:82/99:100/g' /etc/passwd
+    && sed -i 's/405:100/999:1000/g' /etc/passwd && sed -i 's/82:82/99:100/g' /etc/passwd \
+    && sed -i 's/100/1000/g' /etc/group && sed -i 's/82/100/g' /etc/group
     
 ENTRYPOINT ["php-fpm"]
